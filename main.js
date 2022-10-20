@@ -45,6 +45,8 @@ class User1 {
 	}
 }
 
+User1.prototype.country = "Polska";
+
 User1.prototype.hello = function () {
 	console.log(`użytkownik ma na imię ${this.name} i ma ${this.age} lat`);
 };
@@ -53,3 +55,6 @@ const newUser1 = new User1("Jola", 46);
 const newUser2 = new User1("Antek", 15);
 newUser1.hello();
 newUser2.hello();
+const newUser3 = new User1("Rafał", 45);
+newUser3.hello();
+const newUser4 = new User1("Maja", 17);

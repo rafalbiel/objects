@@ -58,3 +58,36 @@ newUser2.hello();
 const newUser3 = new User1("Rafał", 45);
 newUser3.hello();
 const newUser4 = new User1("Maja", 17);
+
+function User2(number) {
+	this.jakisNumer = number;
+	this.test = function () {
+		console.log("jestem sobie metodą w obiekcie");
+	};
+}
+User2.prototype.test = function () {
+	console.log("jestem poza obiektem");
+};
+
+
+
+const newUser5 = new User2(554);
+console.log(newUser5.test());
+
+
+
+
+console.log(newUser5.jakisNumer.toString());
+
+
+// console.log(String());
+console.log(Number());
+console.log(Boolean());
+console.log(Array());
+console.log(Object());
+
+const nowyString = new String('elo');
+const nowyString2 = 'elo'
+console.log(nowyString);
+console.log(nowyString2.charAt(1));
+

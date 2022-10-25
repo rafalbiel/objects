@@ -1,3 +1,6 @@
+'use strict'
+
+
 const newUser = {
 	name: "rafal",
 	surname: "biel",
@@ -113,3 +116,28 @@ button2.addEventListener("click", function () {
 button3.addEventListener("click", function () {
 	newFood3.displayer();
 });
+
+
+const person = {
+	name: "Maja",
+age: 17,
+sex: 'female',
+'hair-color': 'burgund'
+};
+
+console.log(person['hair-color']);
+
+const cars =['audi', 'skoda', 'VW'];
+for(const car of cars){
+	console.log(car);
+}
+
+
+for (const data in person){
+	console.log(data + ' ' + person[data]);
+}
+
+const colors = ['red', 'green', 'blue'];
+for(const color of colors){
+	console.log(color);
+}

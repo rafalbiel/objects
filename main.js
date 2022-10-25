@@ -69,25 +69,47 @@ User2.prototype.test = function () {
 	console.log("jestem poza obiektem");
 };
 
-
-
 const newUser5 = new User2(554);
 console.log(newUser5.test());
 
-
-
-
 console.log(newUser5.jakisNumer.toString());
 
-
-// console.log(String());
+console.log(String());
 console.log(Number());
 console.log(Boolean());
 console.log(Array());
 console.log(Object());
 
-const nowyString = new String('elo');
-const nowyString2 = 'elo'
+const nowyString = new String("elo");
+const nowyString2 = "elo";
 console.log(nowyString);
 console.log(nowyString2.charAt(1));
 
+const paragraph = document.querySelector("p");
+const button1 = document.querySelector(".btn1");
+const button2 = document.querySelector(".btn2");
+const button3 = document.querySelector(".btn3");
+
+class Food {
+	constructor(dishName, dishPrice) {
+		this.dishName = dishName;
+		this.dishPrice = dishPrice;
+		this.displayer = function () {
+			paragraph.innerText = `${this.dishName} kosztuje ${this.dishPrice}`;
+		};
+	}
+}
+
+const newFood1 = new Food("bigos", 20);
+const newFood2 = new Food("pierogi", 15);
+const newFood3 = new Food("flaczki", 25);
+
+button1.addEventListener("click", function () {
+	newFood1.displayer();
+});
+button2.addEventListener("click", function () {
+	newFood2.displayer();
+});
+button3.addEventListener("click", function () {
+	newFood3.displayer();
+});

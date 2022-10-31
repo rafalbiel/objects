@@ -1,5 +1,4 @@
-'use strict'
-
+"use strict";
 
 const newUser = {
 	name: "rafal",
@@ -117,27 +116,34 @@ button3.addEventListener("click", function () {
 	newFood3.displayer();
 });
 
-
 const person = {
 	name: "Maja",
-age: 17,
-sex: 'female',
-'hair-color': 'burgund'
+	age: 17,
+	sex: "female",
+	"hair-color": "burgund",
 };
 
-console.log(person['hair-color']);
+console.log(person["hair-color"]);
 
-const cars =['audi', 'skoda', 'VW'];
-for(const car of cars){
+const cars = ["audi", "skoda", "VW"];
+for (const car of cars) {
 	console.log(car);
 }
 
-
-for (const data in person){
-	console.log(data + ' ' + person[data]);
+for (const data in person) {
+	console.log(data + " " + person[data]);
 }
 
-const colors = ['red', 'green', 'blue'];
-for(const color of colors){
+const colors = ["red", "green", "blue"];
+for (const color of colors) {
 	console.log(color);
 }
+
+function Food5(name) {
+	this.name = name;
+}
+
+const zupa = new Food5('rosol');
+const drugie = new Food5('schabowy');
+console.log(zupa);
+console.log(drugie);

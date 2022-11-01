@@ -1,5 +1,3 @@
-"use strict";
-
 // const newUser = {
 // 	name: "rafal",
 // 	surname: "biel",
@@ -159,66 +157,132 @@
 
 // showMovie.call(movie, 50, "Cinema City");
 
-function Movie(title, year) {
-	this.title = title;
-	this.year = year;
-}
-
-function ActionMovie(title, year) {
-	Movie.call(this, title, year);
-	this.category = "Akcja";
-}
-
-function Comedy(title, year) {
-	Movie.call(this, title, year);
-	this.category = "Komedia";
-}
-
-const newMovie = new ActionMovie("Leon", 2000);
-const newMovie2 = new Comedy("Wild Wild West", 2005);
-
-// function User(name) {
-// 	this.name = name;
+// function Movie(title, year) {
+// 	this.title = title;
+// 	this.year = year;
 // }
 
-// const newUser = new User("Adam");
-// const newUser2 = new User("Jola");
-// const newUser3 = new User("Maja");
-// const newUser4 = new User("Antek");
-// const newUser5 = new User("Rafał");
+// function ActionMovie(title, year) {
+// 	Movie.call(this, title, year);
+// 	this.category = "Akcja";
+// }
 
-// console.log(newUser.name);
-// console.log(newUser2.name);
-// console.log(newUser3.name);
-// console.log(newUser4.name);
-// console.log(newUser5.name);
+// function Comedy(title, year) {
+// 	Movie.call(this, title, year);
+// 	this.category = "Komedia";
+// }
 
-function add(...args) {
-	let results = 0;
-	for (let index = 0; index < args.length; index++) {
-		results = results + args[index];
-	}
-	return results;
-}
-const score = add.apply(null, [1, 2, 3, 4, 5]);
-console.log(score);
+// const newMovie = new ActionMovie("Leon", 2000);
+// const newMovie2 = new Comedy("Wild Wild West", 2005);
 
-const car1 = {
-	name: "Ferrari",
+// // function User(name) {
+// // 	this.name = name;
+// // }
+
+// // const newUser = new User("Adam");
+// // const newUser2 = new User("Jola");
+// // const newUser3 = new User("Maja");
+// // const newUser4 = new User("Antek");
+// // const newUser5 = new User("Rafał");
+
+// // console.log(newUser.name);
+// // console.log(newUser2.name);
+// // console.log(newUser3.name);
+// // console.log(newUser4.name);
+// // console.log(newUser5.name);
+
+// function add(...args) {
+// 	let results = 0;
+// 	for (let index = 0; index < args.length; index++) {
+// 		results = results + args[index];
+// 	}
+// 	return results;
+// }
+// const score = add.apply(null, [1, 2, 3, 4, 5]);
+// console.log(score);
+
+// const car1 = {
+// 	name: "Ferrari",
+// };
+
+// const car2 = {
+// 	name: "Audi",
+// };
+
+// const car3 = {
+// 	name: "Nissan",
+// };
+
+// function showName() {
+// 	console.log(this.name);
+// }
+
+// showName.bind(car1)();
+// showName.bind(car2)();
+// showName.bind(car3)();
+
+// const colorsObj = {
+// 	colors: ["red", "green", "blue"],
+// 	showColors() {
+// 		this.colors.forEach(
+// 			function (element, index) {
+// 				console.log(element + " " + index);
+// 			}.bind(this)
+// 		);
+// 	},
+// };
+// colorsObj.showColors();
+
+// function test3() {
+// 	console.log(this);
+// }
+
+// const test2 = () => {
+// 	console.log(this);
+// };
+
+// test3();
+// test2();
+
+const ob = {
+	name: "Jola",
+	callName() {
+		console.log(this.name);
+
+		function callNameAgain() {
+			console.log(`BIND: ${this.name}`);
+		}
+
+		callNameAgain.bind(ob)();
+
+		const callAgain = () => {
+			console.log(`funkcja strzałkowa w callName: ${this.name}`);
+		};
+
+		callAgain();
+	},
+	testfn: () => {
+		console.log(this);
+	},
 };
 
-const car2 = {
-	name: "Audi",
+ob.callName();
+ob.testfn();
+
+const colorsObj = {
+	colors: ["red", "green", "blues"],
+
+	showColors() {
+		this.colors.forEach((element, index) => {
+			console.log(this.colors[index]);
+		});
+
+		// 	this.colors.forEach(
+		// 		function(element, index){
+		// 			console.log(this.colors[index]);
+		// 		}.bind(this)
+		// 	)
+	},
 };
 
-const car3 = {
-	name: "Nissan",
-};
-
-function showName() {
-	console.log(this.name);
-}
-
-showName.bind(car1)();
-showName.bind(car2)();
-showName.bind(car3)();
+colorsObj.showColors();
